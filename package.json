@@ -2,9 +2,15 @@
   "name": "js_tools",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production babel src/ -d dist"
+  },
   "dependencies": {
     "axios": "^0.26.0",
     "rimraf": "^3.0.2",
     "unzipper": "^0.10.11"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
   }
 }
