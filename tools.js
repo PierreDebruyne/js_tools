@@ -1,9 +1,9 @@
-const fs = require("fs");
-const axios  = require( "axios")
-const unzipper  = require( "unzipper")
-const rimraf  = require( "rimraf")
+import fs from "fs";
+import axios from "axios";
+import unzipper from "unzipper";
+import rimraf from "rimraf";
 
-module.exports.download_file = async function (url, dest) {
+export async function download_file(url, dest) {
     console.log("Download file:", url)
     const writer = fs.createWriteStream(dest);
     return axios.get(url, {responseType: 'stream'}).then(response => {
@@ -27,7 +27,7 @@ module.exports.download_file = async function (url, dest) {
     })
 }
 
-module.exports.unzip = async function (src, dest) {
+export async function unzip(src, dest) {
     return new Promise((resolve, reject) => {
         console.log("Décompréssion de:", src)
         console.log("Vers:", dest)
@@ -46,7 +46,7 @@ module.exports.unzip = async function (src, dest) {
     });
 }
 
-module.exports.rm_rf = async function(path) {
+export async function rm_rf(path) {
     return new Promise((resolve, reject) => {
         rimraf(path, () => {
             resolve();
@@ -55,7 +55,7 @@ module.exports.rm_rf = async function(path) {
 }
 
 
-module.exports.make_id = function(length) {
+export function make_id(length) {
     var result           = '';
     var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;

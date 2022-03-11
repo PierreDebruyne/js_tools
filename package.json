@@ -1,7 +1,6 @@
 {
   "name": "js_tools",
   "version": "1.0.0",
-  "type": "module",
   "dependencies": {
     "axios": "^0.26.0",
     "rimraf": "^3.0.2",
