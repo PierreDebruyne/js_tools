@@ -1,3 +1,3 @@
 #!/bin/bash
 
-git submodule foreach "git pull origin main && ./git_pull_submodule.sh"
+git submodule foreach --recursive "git pull origin main && git submodule update && ./git_pull_submodule.sh"
