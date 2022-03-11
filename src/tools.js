@@ -1,7 +1,7 @@
-import fs from "fs";
-import axios from "axios";
-import unzipper from "unzipper";
-import rimraf from "rimraf";
+const fs = require("fs")
+const axios = require("axios")
+const unzipper = require("unzipper")
+const rimraf = require("rimraf")
 
 module.exports.download_file = async function (url, dest) {
     console.log("Download file:", url)
